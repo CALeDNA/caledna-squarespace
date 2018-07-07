@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html class="no-js">
-<head>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  {.if template.mobileStylesEnabled}
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  {.end}
-
-      <meta name="apple-mobile-web-app-capable" content="yes" />
-      <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     {squarespace-headers}
-</head>
+  </head>
 
-<body class="page-{collection.typeLabel} {squarespace.page-classes}" id="{squarespace.page-id}">
+  <body class="page-{collection.typeLabel} {squarespace.page-classes}" id="{squarespace.page-id}">
 
     <div id="navigator">
       {.section website}
@@ -19,8 +18,8 @@
         <div id="mobileNav"><div class="wrapper">
           <squarespace:navigation navigationId="pages" template="mobile-navigation" />
         </div></div>
-        <div data-content-field="site-title" class="siteTitle">
 
+        <div data-content-field="site-title" class="siteTitle">
           {.if logoImageUrl}
           <a href="/">
             <img id="logo" src="{logoImageUrl}?format=1500w" alt="{siteTitle}" />
@@ -44,10 +43,13 @@
             <h2 class="logo-subtitle">{@}</h2>
           {.end}
         </div>
+
         <squarespace:navigation navigationId="pages" template="navigation" />
       </header>
       {.end}
+
       <div class="sqs-cart-dropzone"></div>
+
       <section id="container" class="{collection.typeLabel}">
         <div id="container-content" class="container-content" data-content-field="main-content">
           {.section collection}{.equal? typeName "products"}{.section categories}
@@ -68,50 +70,58 @@
           {squarespace.main-content}
         </div>
       </section>
-    {.section website}
-    <footer id="bottomBar">
-      <div>
-      {.if socialAccounts}
-      <div class="social-accounts social-links sqs-svg-icon--list" data-content-field="connected-accounts">
-         {@|apply sqs-social-links}
-      </div>
+
+      {.section website}
+      <footer id="bottomBar">
+        <div>
+          {.if socialAccounts}
+          <div class="social-accounts social-links sqs-svg-icon--list" data-content-field="connected-accounts">
+              {@|apply sqs-social-links}
+          </div>
+          {.end}
+
+          <squarespace:block-field id="footerBlock" class="footer-block" columns="12" label="Footer Content" />
+        </div>
+      </footer>
       {.end}
-      <squarespace:block-field id="footerBlock" class="footer-block" columns="12" label="Footer Content" />
-      </div>
-    </footer>
-    {.end}
     </div>
-<script>
-  Y.use('squarespace-ui-base', function(Y) {
-    Y.one(".project-item .meta h1") && Y.one(".project-item .meta h1").plug(Y.Squarespace.TextShrink);
-  });
-</script>
-<squarespace:script src="core-0.2.0.min.js" combo="false"/>
-<squarespace:script src="site.js" combo="true"/>
-<squarespace:script src="dynamic-data.js" combo="true"/>
-<squarespace:script src="lazy-loader.js" combo="true"/>
-{squarespace-footers}
-{.if template.mobileStylesEnabled}{.or}
-  <script>
-    Y.use('node', function() {
-      Y.on('domready', function() {
-        var move;
-        Y.all('.subnav a').each(function(a) {
-          a.on('touchstart', function() {
-            move = false;
-          });
-          a.on('touchmove', function() {
-            move = true;
-          });
-          a.on('touchend', function() {
-            if (move === false) {
-              window.location = a.getAttribute('href');
-            }
+
+    <script>
+      Y.use('squarespace-ui-base', function(Y) {
+        Y.one(".project-item .meta h1") && Y.one(".project-item .meta h1").plug(Y.Squarespace.TextShrink);
+      });
+    </script>
+
+    <squarespace:script src="core-0.2.0.min.js" combo="false"/>
+    <squarespace:script src="site.js" combo="true"/>
+    <squarespace:script src="dynamic-data.js" combo="true"/>
+    <squarespace:script src="lazy-loader.js" combo="true"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <squarespace:script src="bootstrap.min.js" combo="true"/>
+
+    {squarespace-footers}
+
+    {.if template.mobileStylesEnabled}{.or}
+      <script>
+        Y.use('node', function() {
+          Y.on('domready', function() {
+            var move;
+            Y.all('.subnav a').each(function(a) {
+              a.on('touchstart', function() {
+                move = false;
+              });
+              a.on('touchmove', function() {
+                move = true;
+              });
+              a.on('touchend', function() {
+                if (move === false) {
+                  window.location = a.getAttribute('href');
+                }
+              });
+            });
           });
         });
-      });
-    });
-  </script>
-{.end}
-</body>
+      </script>
+    {.end}
+  </body>
 </html>
