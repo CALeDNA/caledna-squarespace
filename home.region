@@ -1,7 +1,146 @@
-      <div class="container main-container">
-        <div class="row">
-          <div class="col-md-10 col-md-offset-1">
-            {squarespace.main-content}
-          </div>
+  <body id="home">
+    <div id="main-wrapper">
+
+      {.section website}
+        <squarespace:navigation navigationId="pages" template="navigation" />
+      {.end}
+
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src='/assets/images/home-carousel/beach2.jpg'></div>
+          <div class="swiper-slide"><img src='/assets/images/home-carousel/forest2.jpg'></div>
+          <div class="swiper-slide"><img src='/assets/images/home-carousel/hill2.jpg'></div>
+          <div class="swiper-slide"><img src='/assets/images/home-carousel/shrub2.jpg'></div>
+        </div>
+
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <div class="swiper-pagination"></div>
+      </div>
+
+      <div class="hero-summary">
+        <h1>CALeDNA</h1>
+        <h2>California Environomental DNA</h2>
+        <p>Together, we can help protect California's biodiversity.</p>
+        <div class="text-center">
+          <a href="https://data.ucedna.com/users/sign_up" class="btn btn-primary">Join Us</a>
         </div>
       </div>
+
+
+
+      <section class="intro">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8">
+              <squarespace:block-field id="homeText1" columns="12"/>
+            </div>
+
+            <div class="col-md-4">
+              <img src='/assets/images/home/tidal_pool.jpg', class='img-responsive'>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="open-data section-grey">
+        <div class="container">
+          <div class="row">
+            <div class="col col-md-5">
+              <div class="site-stats">
+                <div class="stats-box">
+                  <img src='/assets/images/home/test_tube.png'>
+                  1000
+                  Samples collected
+                </div>
+
+                <div class="stats-box">
+                  <img src='/assets/images/home/dna.png'>
+                  1000
+                  Organisms identified
+                </div>
+
+                <div class="stats-box">
+                  <img src='/assets/images/home/users.png'>
+                  300
+                  Registered users
+                </div>
+              </div>
+
+            </div>
+
+            <div class="col col-md-7">
+              <squarespace:block-field id="homeText2" columns="12"/>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="activities">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 col-sm-6">
+              <div class="panel panel-default">
+                <a href="https://ucedna.com/become_community_scientist">
+                  <img src='/assets/images/home/register2.png' class='img-responsive'>
+                  <div class="panel-body">
+                    <h3>Volunteer as a community scientist.</h3>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <div class="panel panel-default">
+                <a href="http://www.ucedna.com/kit-training/">
+                  <img src='/assets/images/home/collect_soil2.png' class='img-responsive'>
+                  <div class="panel-body">
+                    <h3>Get training for collecting soil samples.</h3>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <div class="panel panel-default">
+                <a href="https://data.ucedna.com/events">
+                  <img src='/assets/images/home/attend_biobltiz2.png' class='img-responsive'>
+                  <div class="panel-body">
+                    <h3>Attend bioblitzes to collect soil samples.</h3>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <div class="panel panel-default">
+                <a href="https://ucenda.com/how_are_samples_analyzed">
+                  <img src='/assets/images/home/analyze_sample2.png' class='img-responsive'>
+                  <div class="panel-body">
+                    <h3>Learn how our labs sequence and analyze eDNA.</h3>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <div class="panel panel-default">
+                <a href="https://data.ucedna.com/samples">
+                  <img src='/assets/images/home/explore_results2.png' class='img-responsive' />
+                  <div class="panel-body">
+                    <h3>Explore the data we collect in the field and in our labs.</h3>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta section-grey">
+        <div class="container">
+          <p>Help protect California's biodiversity.</p>
+          <a href="https://data.ucedna.com/users/sign_up" class="btn btn-primary">Join CALeDNA</a>
+        </div>
+      </section>

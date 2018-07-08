@@ -6,7 +6,27 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <squarespace:script src="bootstrap.min.js" combo="true"/>
+    <squarespace:script src="swiper.js" combo="true"/>
     <squarespace:script src="site.js" combo="true"/>
+
+    <script>
+      $(document).ready(function () {
+        var mySwiper = new Swiper ('.swiper-container', {
+          direction: 'horizontal',
+          loop: true,
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          autoplay: {
+            delay: 4000,
+          },
+          pagination: {
+            el: '.swiper-pagination',
+          },
+        })
+      });
+    </script>
 
     {squarespace-footers}
   </body>
