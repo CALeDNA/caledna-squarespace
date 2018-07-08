@@ -1,4 +1,5 @@
-  <body>
+  {# need squarespace.page-classes for calendar  }
+  <body class="{squarespace.page-classes}" >
     <div id="main-wrapper">
 
       {.section website}
