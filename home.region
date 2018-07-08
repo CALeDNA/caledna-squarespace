@@ -51,19 +51,19 @@
               <div class="site-stats">
                 <div class="stats-box">
                   <img src='/assets/images/home/test_tube.png'>
-                  1000
+                  1,023
                   Samples collected
                 </div>
 
                 <div class="stats-box">
                   <img src='/assets/images/home/dna.png'>
-                  1000
+                  24,984
                   Organisms identified
                 </div>
 
                 <div class="stats-box">
                   <img src='/assets/images/home/users.png'>
-                  300
+                  301
                   Registered users
                 </div>
               </div>
@@ -82,7 +82,7 @@
           <div class="row">
             <div class="col-md-4 col-sm-6">
               <div class="panel panel-default">
-                <a href="https://ucedna.com/become_community_scientist">
+                <a href="http://www.ucedna.com/become-a-community-scientist/">
                   <img src='/assets/images/home/register2.png' class='img-responsive'>
                   <div class="panel-body">
                     <h3>Volunteer as a community scientist.</h3>
@@ -115,7 +115,7 @@
 
             <div class="col-md-4 col-sm-6">
               <div class="panel panel-default">
-                <a href="https://ucenda.com/how_are_samples_analyzed">
+                <a href="http://www.ucedna.com/how-are-samples-analyzed/">
                   <img src='/assets/images/home/analyze_sample2.png' class='img-responsive'>
                   <div class="panel-body">
                     <h3>Learn how our labs sequence and analyze eDNA.</h3>
