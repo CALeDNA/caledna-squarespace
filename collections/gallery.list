@@ -1,0 +1,28 @@
+<div id="project">
+
+  {.section collection}
+  <div class="project-item" data-dynamic-href="{fullUrl}">
+    <div class="meta">
+      <h1>{title}</h1>
+      {.if categories}<h2></h2>{.end}
+
+      <section class="body">{description}</section>
+      <div class="share-like">
+        {@|social-button-inline}
+      </div>
+    </div>
+  {.end}
+    <div class="gallery">
+      {.repeated section items}
+        <a class="gallery-item" {.section clickthroughUrl}href="{@}"{.end}>
+
+        {.image?}<img {@|image-meta} data-image-stretch="false" class="loading"/>{.end}
+        {.video?}{@|video}{.end}
+        <div class="sqs-spin"></div>
+
+        </a>
+      {.end}
+    </div>
+  </div>
+  
+</div>

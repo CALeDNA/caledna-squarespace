@@ -1,0 +1,72 @@
+{.section collection}
+
+  <!-- Project Detail -->
+  <div id="project">
+
+  {.repeated section collections}
+    <div class="project-item clearfix visually-hidden" data-dynamic-href="/{urlId}/" data-type-name="{typeName}" {.if passwordProtected}data-type-protected{.end}>
+      <div class="meta">
+        <h1>{title}</h1>
+        {.if categories}<h2></h2>{.end}
+
+        <div class="body">{description}</div>
+        <div class="share-like">
+          {@|social-button-inline}
+        </div>
+      </div>
+      <div class="gallery" id="detail_{id}">
+        <div class="sqs-spin"></div>
+      </div>
+    </div>
+  {.end}
+
+    <!-- Navigation -->
+    <div class="switcher">
+      <div class="switcher-content">
+        <a class="projectPrev"></a>
+        <a class="projectHome"></a>
+        <a class="projectNext"></a>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    Y.use('squarespace-ui-base', function(Y) {
+      Y.all(".project-item .meta h1").each(function (current) {
+        current.plug(Y.Squarespace.TextShrink);
+      });
+    });
+  </script>
+
+  <!-- Main Grid -->
+  <div id="grid" data-collection-id="{id}">
+  {.repeated section collections}
+  {.if mainImage}
+    <div class="item">
+      <a href="/{urlId}/" data-dynamic-load data-dynamic-receiver="#detail_{id}"   {.if passwordProtected}data-type-protected{.end}>
+        <div class="wrapper">
+          <div class="project-title">
+            <h2>{title}</h2>
+            <h3>&mdash; view &mdash;</h3>
+          </div>
+        </div>
+        {.section mainImage}
+          <img class="thumbnail loading" {@|image-meta} data-load="false" />
+          <noscript><img src="{assetUrl}?format=original"></noscript>
+        {.end}
+      </a>
+    </div>
+  {.end}
+  {.end}
+  </div>
+
+  <div class="hidden">
+  {.repeated section collections}
+    {.if mainImage}{.or}
+      <a href="/{urlId}/" data-dynamic-load data-dynamic-receiver="#detail_{id}"   {.if passwordProtected}data-type-protected{.end}></a>
+    {.end}
+  {.end}
+  </div>
+
+{.end}

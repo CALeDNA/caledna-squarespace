@@ -1,0 +1,79 @@
+{.section items}
+<!--MOBILE-->
+<nav id="mobile-navigation">
+  <div id="mobile-navigation-label"></div>
+  <ul data-content-field="navigation-mobileNav">
+    {.repeated section @}
+      {.index?}
+        {.section collection}
+          <li class="{.if active} active-link{.end}"><a href="{fullUrl}">{navigationTitle}</a></li>
+        {.end}
+      {.or folder?}
+        <li class="folder{.if folderActive} active-folder{.end}">
+
+            <!--FOLDER-->
+
+            <div class="folder-parent">
+              <a>{collection.navigationTitle}</a>
+              <div class="folder-child-wrapper">
+                <ul class="folder-child">
+
+                  {.repeated section items}
+
+                    {.collection?}
+                      <li class="{.section active} active-link{.end}">
+                        <a href="{collection.fullUrl}">
+                          {collection.navigationTitle}
+                        </a>
+                      </li>
+                    {.end}
+
+                    {.section externalLink}
+                      <li>
+                        <a href="{url}"{.section newWindow} target="_blank"{.end}>
+                          {title}
+                        </a>
+                      </li>
+                    {.end}
+                  {.end}
+
+                </ul>
+              </div>
+            </div>
+          </li>
+      {.or}
+
+        {.section collection}
+          <li class="{.if active} active-link{.end}"><a href="{fullUrl}">{navigationTitle}</a></li>
+        {.end}
+
+        {.section externalLink}
+          <li class="{.if active} active-link{.end}"><a href="{url}"{.section newWindow} target="_blank"{.end}>
+            {title}
+          </a></li>
+        {.end}
+
+      {.end}
+        
+    {.end}
+  </ul>
+</nav>
+{.end}
+
+<!--JS-->
+
+<script>
+  Y.use('node', function(Y) {
+    Y.on('domready', function() {
+      var nav = Y.one('#mobile-navigation');
+      if (nav) {
+        Y.on('click', function(e) {
+          if (!e.target.getAttribute('href')) {
+            nav.toggleClass('sqs-mobile-nav-open');
+            Y.one('body').toggleClass('sqs-mobile-nav-open');
+          }
+        }, '#mobile-navigation-label');
+      }
+    });
+  });
+</script>

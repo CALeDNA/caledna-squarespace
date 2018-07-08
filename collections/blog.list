@@ -1,0 +1,87 @@
+<div id="blog">
+<div class="content">
+  <script>Y.use('squarespace-social-buttons')</script> 
+
+  {.repeated section items}
+
+  <article class="{@|item-classes}" id="article-{id}" data-item-id="{id}">
+    
+    <section class="main">
+      <header class="">
+        {.if title}
+        <h1 class="entry-title">
+          {.passthrough?}
+            <a href="{sourceUrl}">{title} <span>&rarr;</span></a>
+          {.or}
+            <a href="{fullUrl}">{title}</a>
+          {.end}
+        </h1>
+        {.end}
+      </header>
+
+      <!--SPECIAL CONTENT-->
+        {.section promotedBlock}
+        <div class="special-content">
+          {@}
+        </div>
+        {.end}
+
+      <section>
+        {.excerpt?}
+          <div class="body entry-content">{excerpt} <p><a class="read-more" href="{fullUrl}">Read more</a></p></div>
+        {.or}
+          {.section body}<div class="body entry-content">{@}</div>{.end}
+          {.passthrough?}{.or}{.section sourceUrl}<div class="entry-source">Source: <a href="{sourceUrl}" target="_blank">{sourceUrl|truncate 42}</a></div>{.end}{.end} 
+        {.end}
+          
+      </section>
+
+      <footer class="">
+        <div class="meta"> 
+          
+          {.section tags}<span class="tags">tags: {.repeated section @}<a href="{collection.fullUrl}?tag={@|url-encode}" rel="tag">{@}</a>{.alternates with}, {.end}</span>{.end}
+          {.section categories}<div class="categories">categories: {.repeated section @}<a href="{collection.fullUrl}?category={@|url-encode}" rel="tag">{@}</a>{.alternates with}, {.end}</div>{.end}
+          
+        </div>
+      </footer>
+
+      <div class="sqs-post-entry">{postItemInjectCode}</div>
+    
+    </section>
+
+    <section class="sidebar">
+      <span class="date"><time class="published" datetime="{addedOn|date %F}">{addedOn|date %A %m.%d.%y}</time></span>
+      <address rel="author">{.section author}<span class="author">Posted by <a href="{collection.fullUrl}?author={author.id}">{displayName}</a></span>{.end}</address>
+      <div class="comments">
+        {.comments?}
+          {.if websiteSettings.disqusShortname}
+          {@|comment-link}
+          {.or}
+          {.section publicCommentCount}
+          Comments: <a class="comments" href="{fullUrl}#commentsWrapper" title="Comments">{@}</a>
+            {.or}
+            {.end}
+          {.end}
+        {.end}
+      </div>
+      <div class="social-like">{@|like-button}
+      {@|social-button-inline}</div>
+    </section>
+   </article>
+
+  <!-- @HACK -->
+  <div style="clear: left">&nbsp;</div>
+
+  {.end}
+  <!--PAGINATION-->
+    
+  {.section pagination}
+    <nav class="pagination">
+        {.if pagination.prevPage}<a href="{prevPageUrl}">Newer</a>{.or}Newer{.end} / 
+        {.if pagination.nextPage}<a href="{nextPageUrl}">Older</a>{.or}Older{.end}
+    </nav>
+  {.end}
+</div>
+</div>
+
+

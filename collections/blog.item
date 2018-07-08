@@ -1,0 +1,89 @@
+<div id="blog">
+<div class="content">
+
+{.section item}
+
+  <article class="{@|item-classes}" id="article-{id}" data-item-id="{id}">
+
+  <!--POST BODY-->
+  
+    <section class="main">
+      <header class="">
+        {.if title}
+        <h1 class="entry-title">
+          {.passthrough?}
+            <a href="{sourceUrl}">{title} <span>&rarr;</span></a>
+          {.or}
+            {title}
+          {.end}
+        </h1>
+        {.end}
+      </header>
+
+      <!--SPECIAL CONTENT-->
+      {.section promotedBlock}
+      <div class="special-content">
+        {@}
+      </div>
+      {.end}
+
+      <section>
+        <div class="body entry-content">{body}</div>
+        {.passthrough?}{.or}{.section sourceUrl}<div class="entry-source">Source: <a href="{sourceUrl}" target="_blank">{sourceUrl|truncate 42}</a></div>{.end}{.end} 
+      </section>
+
+        
+  <!--POST FOOTER-->
+      
+      <footer class="">
+        <div class="meta"> 
+          
+          {.section tags}<span class="tags">tags: {.repeated section @}<a href="{collection.fullUrl}?tag={@|url-encode}" rel="tag">{@}</a>{.alternates with}, {.end}</span>{.end}
+          {.section categories}<div class="categories">categories: {.repeated section @}<a href="{collection.fullUrl}?category={@|url-encode}" rel="tag">{@}</a>{.alternates with}, {.end}</div>{.end}
+          
+      </footer>
+
+      <div class="sqs-post-entry">{postItemInjectCode}</div>
+    </section>
+
+    <!--POST HEADER-->
+      
+    <section class="sidebar">
+      <span class="date"><time class="published" datetime="{addedOn|date %F}">{addedOn|date %A %m.%d.%y}</time></span>
+      <address rel="author">{.section author}<span class="author">Posted by <a href="{collection.fullUrl}?author={author.id}">{displayName}</a></span>{.end}</address>
+      <div class="comments">
+        {.comments?}
+          {.if websiteSettings.disqusShortname}
+          {@|comment-link}
+          {.or}
+          {.section publicCommentCount}
+          Comments: <a class="comments" href="{fullUrl}#commentsWrapper" title="Comments">{@}</a>
+            {.or}
+            {.end}
+          {.end}
+        {.end}
+      </div>
+      <div class="social-like">{@|like-button}
+            {@|social-button-inline}</div>
+    </section>
+    
+  </article>
+
+{.end}
+
+<!--PAGINATION-->
+  {.section pagination}
+    <nav class="pagination">
+        {.section prevItem}<a href="{fullUrl}">Newer</a>{.or}Newer{.end} / 
+        {.section nextItem}<a href="{fullUrl}">Older</a>{.or}Older{.end}
+    </nav>
+  {.end}
+
+{.section item}
+  <!-- COMMENTS -->
+  <section class="comments-wrapper">
+    {@|comments}
+  </section>
+{.end}
+</div>
+</div>

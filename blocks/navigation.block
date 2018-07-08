@@ -1,0 +1,38 @@
+<nav class="main-nav dropdown-hover">
+  <ul id="nav" data-content-field="navigation-mainNav">
+  {.repeated section items}
+    <li class="{.section collection}{typeLabel}-collection{.end}{.section active} active-link{.end}{.if collection.folder} folder{.end}{.if folderActive} active-link active-folder{.end}{.section externalLink} external-link{.end}">
+    {.index?}
+      {.section collection}
+        <a href="{fullUrl}" rel="{typeName}" class="transition-link">{navigationTitle}</a>
+      {.end}
+    {.or folder?}
+      <a href="{collection.fullUrl}">{collection.navigationTitle}</a>
+        <div class="subnav">
+          <ul>
+            {.repeated section items}
+              {.collection?}
+                <li class="{collection.typeLabel}-collection{.section active} active-link{.end}">
+                  <a href="{collection.fullUrl}" class="transition-link">{collection.navigationTitle}</a>
+                </li>
+              {.end}
+              {.section externalLink}
+                <li class="external-link">
+                  <a href="{url}"{.section newWindow} target="_blank"{.end}>{title}</a>
+                </li>
+              {.end}
+            {.end}
+          </ul>
+        </div>
+    {.or}
+      {.section collection}
+        <a href="{fullUrl}" rel="{typeName}" class="transition-link">{navigationTitle}</a>
+      {.end}
+      {.section externalLink}
+        <a href="{url}"{.section newWindow} target="_blank"{.end}>{title}</a>
+      {.end}
+    {.end}
+    </li>
+    {.end}
+  </ul>
+</nav>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+
+  {.if template.mobileStylesEnabled}
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  {.end}
+
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    {squarespace-headers}
+</head>
+
+<body class="page-{collection.typeLabel} {squarespace.page-classes}" id="{squarespace.page-id}">
+
+    <div id="navigator">
+      {.section website}
+      <header id="topBar" class="sqs-announcement-bar-dropzone">
+        <div id="mobileNav"><div class="wrapper">
+          <squarespace:navigation navigationId="pages" template="mobile-navigation" />
+        </div></div>
+        <div data-content-field="site-title" class="siteTitle">
+
+          {.if logoImageUrl}
+          <a href="/">
+            <img id="logo" src="{logoImageUrl}?format=1500w" alt="{siteTitle}" />
+          </a>
+          {.or}
+          <h1>
+            <a href="/">
+              <span id="site-title">{siteTitle}</span>
+            </a>
+          </h1>
+          <script>
+            Y.use('squarespace-ui-base', function(Y) {
+              Y.one(".siteTitle h1").plug(Y.Squarespace.TextShrink, {
+                triggerWidth: 640
+              });
+            });
+          </script>
+          {.end}
+
+          {.section siteTagLine}
+            <h2 class="logo-subtitle">{@}</h2>
+          {.end}
+        </div>
+        <squarespace:navigation navigationId="pages" template="navigation" />
+      </header>
+      {.end}
+      <div class="sqs-cart-dropzone"></div>
+      <section id="container" class="{collection.typeLabel}">
+        <div id="container-content" class="container-content" data-content-field="main-content">
+          {.section collection}{.equal? typeName "products"}{.section categories}
+          <div id="categoryNav">
+            <input type="checkbox" name="category-nav-toggle" id="categoryNavToggle" class="category-nav-toggle hidden" />
+            <label for="categoryNavToggle" class="category-nav-toggle-label" onclick></label>
+            <nav class="category-nav">
+              <ul class="category-nav-links">
+                <li class="filter"><a>Filter{.if categoryFilter}: {categoryFilter}{.end}</a></li>
+                <li{.if categoryFilter}{.or} class="active-link all"{.end}><a href="{fullUrl}">All</a></li>
+                {.repeated section @}
+                <li{.equal? categoryFilter @} class="active-link"{.end}><a href="{fullUrl}?category={@|url-encode}">{@}</a></li>
+                {.end}
+              </ul>
+            </nav>
+          </div>
+          {.end}{.end}{.end}
+          {squarespace.main-content}
+        </div>
+      </section>
+    {.section website}
+    <footer id="bottomBar">
+      <div>
+      {.if socialAccounts}
+      <div class="social-accounts social-links sqs-svg-icon--list" data-content-field="connected-accounts">
+         {@|apply sqs-social-links}
+      </div>
+      {.end}
+      <squarespace:block-field id="footerBlock" class="footer-block" columns="12" label="Footer Content" />
+      </div>
+    </footer>
+    {.end}
+    </div>
+<script>
+  Y.use('squarespace-ui-base', function(Y) {
+    Y.one(".project-item .meta h1") && Y.one(".project-item .meta h1").plug(Y.Squarespace.TextShrink);
+  });
+</script>
+<squarespace:script src="core-0.2.0.min.js" combo="false"/>
+<squarespace:script src="site.js" combo="true"/>
+<squarespace:script src="dynamic-data.js" combo="true"/>
+<squarespace:script src="lazy-loader.js" combo="true"/>
+{squarespace-footers}
+{.if template.mobileStylesEnabled}{.or}
+  <script>
+    Y.use('node', function() {
+      Y.on('domready', function() {
+        var move;
+        Y.all('.subnav a').each(function(a) {
+          a.on('touchstart', function() {
+            move = false;
+          });
+          a.on('touchmove', function() {
+            move = true;
+          });
+          a.on('touchend', function() {
+            if (move === false) {
+              window.location = a.getAttribute('href');
+            }
+          });
+        });
+      });
+    });
+  </script>
+{.end}
+</body>
+</html>
