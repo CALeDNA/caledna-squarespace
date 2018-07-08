@@ -1,0 +1,32 @@
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-2">
+        <ul>
+          <li><a href="http://www.ucedna.com/contact">Contact Us</a></li>
+          <li><a href="/newsletter">Newsletter</a></li>
+          <li><a href="/terms">Terms of Use</a></li>
+        </ul>
+      </div>
+
+      <div class="col-sm-2">
+        <ul>
+          <li>
+            <a href="https://twitter.com/UCalConGenomics" target="_blank" class="sqs-svg-icon--wrapper twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/ucconservationgenomics/" target="_blank" class="sqs-svg-icon--wrapper facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </li>
+        <ul>
+      </div>
+
+      <div class="col-sm-8">
+        <squarespace:block-field id="footerBlock" class="footer-block" columns="12" label="Footer Content" />
+      </div>
+    </div>
+  </div>
+</footer>

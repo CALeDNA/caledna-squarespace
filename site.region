@@ -7,53 +7,27 @@
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
     {squarespace-headers}
   </head>
 
-  <body class="page-{collection.typeLabel} {squarespace.page-classes}" id="{squarespace.page-id}">
-
-    <div id="navigator">
+  <body id="{squarespace.page-id}">
+    <div id="main-wrapper">
       {.section website}
-      <header id="topBar" class="sqs-announcement-bar-dropzone">
         <squarespace:navigation navigationId="pages" template="navigation" />
-      </header>
       {.end}
 
-      <div class="sqs-cart-dropzone"></div>
-
-      <section id="container" class="{collection.typeLabel}">
-        <div id="container-content" class="container-content" data-content-field="main-content">
-          {.section collection}{.equal? typeName "products"}{.section categories}
-          <div id="categoryNav">
-            <input type="checkbox" name="category-nav-toggle" id="categoryNavToggle" class="category-nav-toggle hidden" />
-            <label for="categoryNavToggle" class="category-nav-toggle-label" onclick></label>
-            <nav class="category-nav">
-              <ul class="category-nav-links">
-                <li class="filter"><a>Filter{.if categoryFilter}: {categoryFilter}{.end}</a></li>
-                <li{.if categoryFilter}{.or} class="active-link all"{.end}><a href="{fullUrl}">All</a></li>
-                {.repeated section @}
-                <li{.equal? categoryFilter @} class="active-link"{.end}><a href="{fullUrl}?category={@|url-encode}">{@}</a></li>
-                {.end}
-              </ul>
-            </nav>
+      <div class="container main-container">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            {squarespace.main-content}
           </div>
-          {.end}{.end}{.end}
-          {squarespace.main-content}
         </div>
-      </section>
+      </div>
 
       {.section website}
-      <footer id="bottomBar">
-        <div>
-          {.if socialAccounts}
-          <div class="social-accounts social-links sqs-svg-icon--list" data-content-field="connected-accounts">
-              {@|apply sqs-social-links}
-          </div>
-          {.end}
-
-          <squarespace:block-field id="footerBlock" class="footer-block" columns="12" label="Footer Content" />
-        </div>
-      </footer>
+        {@|apply footer.block}
       {.end}
     </div>
 
