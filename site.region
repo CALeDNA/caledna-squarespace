@@ -15,35 +15,6 @@
     <div id="navigator">
       {.section website}
       <header id="topBar" class="sqs-announcement-bar-dropzone">
-        <div id="mobileNav"><div class="wrapper">
-          <squarespace:navigation navigationId="pages" template="mobile-navigation" />
-        </div></div>
-
-        <div data-content-field="site-title" class="siteTitle">
-          {.if logoImageUrl}
-          <a href="/">
-            <img id="logo" src="{logoImageUrl}?format=1500w" alt="{siteTitle}" />
-          </a>
-          {.or}
-          <h1>
-            <a href="/">
-              <span id="site-title">{siteTitle}</span>
-            </a>
-          </h1>
-          <script>
-            Y.use('squarespace-ui-base', function(Y) {
-              Y.one(".siteTitle h1").plug(Y.Squarespace.TextShrink, {
-                triggerWidth: 640
-              });
-            });
-          </script>
-          {.end}
-
-          {.section siteTagLine}
-            <h2 class="logo-subtitle">{@}</h2>
-          {.end}
-        </div>
-
         <squarespace:navigation navigationId="pages" template="navigation" />
       </header>
       {.end}
@@ -86,42 +57,9 @@
       {.end}
     </div>
 
-    <script>
-      Y.use('squarespace-ui-base', function(Y) {
-        Y.one(".project-item .meta h1") && Y.one(".project-item .meta h1").plug(Y.Squarespace.TextShrink);
-      });
-    </script>
-
-    <squarespace:script src="core-0.2.0.min.js" combo="false"/>
-    <squarespace:script src="site.js" combo="true"/>
-    <squarespace:script src="dynamic-data.js" combo="true"/>
-    <squarespace:script src="lazy-loader.js" combo="true"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <squarespace:script src="bootstrap.min.js" combo="true"/>
 
     {squarespace-footers}
-
-    {.if template.mobileStylesEnabled}{.or}
-      <script>
-        Y.use('node', function() {
-          Y.on('domready', function() {
-            var move;
-            Y.all('.subnav a').each(function(a) {
-              a.on('touchstart', function() {
-                move = false;
-              });
-              a.on('touchmove', function() {
-                move = true;
-              });
-              a.on('touchend', function() {
-                if (move === false) {
-                  window.location = a.getAttribute('href');
-                }
-              });
-            });
-          });
-        });
-      </script>
-    {.end}
   </body>
 </html>
