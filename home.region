@@ -51,19 +51,19 @@
               <div class="site-stats">
                 <div class="stats-box">
                   <img src='/assets/images/home/test_tube.png'>
-                  1,023
+                  <span id="js-samples-count">-</span>
                   Samples collected
                 </div>
 
                 <div class="stats-box">
                   <img src='/assets/images/home/dna.png'>
-                  24,984
+                  <span id="js-organisms-count">-</span>
                   Organisms identified
                 </div>
 
                 <div class="stats-box">
                   <img src='/assets/images/home/users.png'>
-                  301
+                  <span id="js-users-count">-</span>
                   Registered users
                 </div>
               </div>
