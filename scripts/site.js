@@ -5,8 +5,6 @@ $(document).ready(function () {
     element.insertAdjacentHTML('afterend', '<li role="separator" class="divider"></li>')
   }
 
-  addDivider(document.querySelector('[data-path="/contact/"]'))
-
   const dataEls = document.querySelectorAll('[data-path="/explore-data/"]')
   addDivider(dataEls[dataEls.length -1 ])
 });
