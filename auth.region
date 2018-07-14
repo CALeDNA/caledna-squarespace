@@ -1,0 +1,8 @@
+<body class="auth">
+  <div id="main-wrapper">
+
+  {.section website}
+    <squarespace:navigation navigationId="pages" template="navigation" />
+  {.end}
+
+    <div class="spinner"></div>

@@ -74,8 +74,12 @@
         {.end}
       </ul>
 
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="http://data.ucedna.com/users/sign_in">Sign In</a></li>
+      <ul class="nav navbar-nav navbar-right js-auth">
+        <noscript>
+          <li>
+            <a href="https://data.ucedna.com/users/sign_in">Sign In</a>
+          </li>
+        </noscript>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
