@@ -1,0 +1,19 @@
+  {# need squarespace.page-classes for calendar  }
+  <body class="{squarespace.page-classes}" >
+    <div id="main-wrapper">
+
+      {.section website}
+        <squarespace:navigation navigationId="pages" template="navigation" />
+      {.end}
+
+      <div class="container main-container">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            {.section collection}
+               <h1>{title}</h1>
+            {.end}
+            <squarespace:navigation navigationId="data_analyst" template="get_involved_nav" />
+            {squarespace.main-content}
+          </div>
+        </div>
+      </div>
