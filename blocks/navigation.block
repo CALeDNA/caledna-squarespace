@@ -42,7 +42,7 @@
           {.or folder?}
             <li class="dropdown {.if folderActive} active{.end}">
               <a href="{collection.fullUrl}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                {collection.navigationTitle} <span class="caret"></span>
+                {collection.navigationTitle}
               </a>
               <ul class="dropdown-menu">
                 {.repeated section items}
