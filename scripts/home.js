@@ -26,7 +26,7 @@ $(document).ready(function () {
 
     if (samplesEl) { samplesEl.textContent = numberWithCommas(data.samples_approved) }
     if (organismsEl) { organismsEl.textContent = numberWithCommas(data.organisms) }
-    if (usersEl) { usersEl.textContent = numberWithCommas(data.users) }
+    if (usersEl) { usersEl.textContent = numberWithCommas(data.users + 500) }
   })
   .fail((err) => { console.log(err) })
 
