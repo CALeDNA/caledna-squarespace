@@ -52,7 +52,7 @@
                 <div class="stats-box">
                   <img src='/assets/images/home/test_tube.png'>
                   <span id="js-samples-count">-</span>
-                  Samples collected
+                  Sites
                 </div>
 
                 <div class="stats-box">
