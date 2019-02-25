@@ -5,6 +5,7 @@ $(document).ready(function () {
   // ==============
 
   const addDivider = (element) => {
+    if (!element) { return }
     element.insertAdjacentHTML('afterend', '<li role="separator" class="divider"></li>')
   }
 
