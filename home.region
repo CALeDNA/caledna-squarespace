@@ -140,8 +140,7 @@
 
       <section class="news section-grey">
         <div class="container">
-          <squarespace:block-field label="News" id="news"/>
-          <squarespace:block-field label="Instagram" id="instagram"/>
+          <squarespace:block-field label="Updates" id="updates"/>
          </div>
       </section>
 
