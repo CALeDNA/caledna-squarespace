@@ -2,8 +2,6 @@
 // layout
 // =============
 
-
-
 .main-container {
   padding-top: 4rem;
 }
@@ -24,33 +22,23 @@ body {
   min-height: 100%;
   position: relative;
   padding: 0;
-  padding-bottom: 35rem;
+  padding-bottom: 19rem;
 }
 
-footer {
+#site-footer {
   width: 100%;
   bottom: 0;
   position: absolute;
-  min-height: 28rem;
+  min-height: 19rem;
 }
 
-@media (min-width: 480px) {
+@media (max-width: 768px) {
   #main-wrapper {
-    padding-bottom: 32rem;
+    padding-bottom: 35rem;
   }
 
-  footer {
-    min-height: 25rem;
-  }
-}
-
-@media (min-width: 768px) {
-  #main-wrapper {
-    padding-bottom: 19rem;
-  }
-
-  footer {
-    min-height: 12rem;
+  #site-footer {
+    min-height: 29rem;
   }
 }
 
@@ -63,21 +51,32 @@ body {
   // font-size: calc(16px + .25vw);
 }
 
-blockquote, dl, dt, figcaption, li, p, textarea {
+blockquote,
+dl,
+dt,
+figcaption,
+li,
+p,
+textarea {
   line-height: 1.5em;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   line-height: 1.2em;
 }
 
 h1:first-of-type {
   margin-top: 0;
-  margin-bottom: .75rem;
+  margin-bottom: 0.75rem;
 }
 
-h1, h2, h3, h4 {
-  margin: 1em 0 .75em;
+h1,
+h2,
+h3,
+h4 {
+  margin: 1em 0 0.75em;
 }
 
 h1 {
@@ -131,20 +130,20 @@ h1.border {
 }
 
 fieldset.border {
-  border: solid 1px #DDD !important;
+  border: solid 1px #ddd !important;
   padding: 0 15px 15px 15px;
   border-bottom: none;
   margin: 20px 0;
 }
 
 legend.border {
-  width:inherit; /* Or auto */
-  padding:0 10px; /* To give a bit of padding on the left and right */
-  border-bottom:none;
+  width: inherit; /* Or auto */
+  padding: 0 10px; /* To give a bit of padding on the left and right */
+  border-bottom: none;
 }
 
 .clickable_row:hover {
-  background:#eee;
+  background: #eee;
   cursor: pointer;
 }
 
@@ -161,9 +160,8 @@ legend.border {
 }
 
 .samples-links a {
-  margin-left: .5em;
+  margin-left: 0.5em;
 }
-
 
 // =============
 // nav
@@ -196,8 +194,9 @@ legend.border {
   height: 100px;
 }
 
-
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
   background: lighten(#cbe2d3, 10%);
 }
 
@@ -245,11 +244,12 @@ legend.border {
   }
 }
 
-ul.nav li.dropdown > ul.dropdown-menu  {
+ul.nav li.dropdown > ul.dropdown-menu {
   background-color: #cbe2d3;
 }
 
-.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
   background-color: lighten(#cbe2d3, 10%);
 }
 
@@ -265,8 +265,7 @@ ul.nav li.dropdown > ul.dropdown-menu  {
 // footer
 // =============
 
-
-footer {
+#site-footer {
   background-color: #cbe2d3;
   padding: 1.5rem 0;
 
@@ -276,11 +275,11 @@ footer {
   }
 
   li {
-    padding: .4rem 0;
+    padding: 0.4rem 0;
   }
 
   .social-media a:link {
-    padding-right: .6rem;
+    padding-right: 0.6rem;
   }
 
   a {

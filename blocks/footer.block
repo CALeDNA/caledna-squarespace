@@ -1,7 +1,8 @@
-<footer>
+<footer id="site-footer">
   <div class="container">
     <div class="row">
-      <div class="col-sm-2">
+      <div class="col-sm-3">
+        <squarespace:block-field label="Social Media" id="social-media-links" />
         <ul>
           <li><a href="http://www.ucedna.com/contact">Contact Us</a></li>
           <li><a href="/newsletter">Newsletter</a></li>
@@ -9,11 +10,7 @@
         </ul>
       </div>
 
-      <div class="col-sm-2">
-        <squarespace:block-field label="Social Media" id="socialMedia" />
-      </div>
-
-      <div class="col-sm-8">
+      <div class="col-sm-9">
         <squarespace:block-field id="footerBlock" class="footer-block" label="Footer Content" />
       </div>
     </div>
