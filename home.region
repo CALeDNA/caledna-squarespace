@@ -34,7 +34,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-8">
-              <squarespace:block-field id="homeText1" columns="12"/>
+              <squarespace:block-field id="homeText1" label="Home 1" />
             </div>
 
             <div class="col-md-4">
@@ -71,7 +71,7 @@
             </div>
 
             <div class="col col-md-7">
-              <squarespace:block-field id="homeText2" columns="12"/>
+              <squarespace:block-field id="homeText2" label="home2" />
             </div>
           </div>
         </div>
@@ -138,7 +138,15 @@
         </div>
       </section>
 
-      <section class="cta section-grey">
+      <section class="news section-grey">
+        <div class="container">
+          <squarespace:block-field label="News" id="news"/>
+          <squarespace:block-field label="Instagram" id="instagram"/>
+         </div>
+      </section>
+
+
+      <section class="cta">
         <div class="container">
           <p>Help protect California's biodiversity.</p>
           <a href="https://data.ucedna.com/users/sign_up" class="btn btn-primary">Join CALeDNA</a>

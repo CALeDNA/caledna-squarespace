@@ -10,17 +10,11 @@
       </div>
 
       <div class="col-sm-2">
-        <ul>
-          <li>
-            <a href="https://www.facebook.com/caledna/" target="_blank" class="sqs-svg-icon--wrapper facebook">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-          </li>
-        <ul>
+        <squarespace:block-field label="Social Media" id="socialMedia" />
       </div>
 
       <div class="col-sm-8">
-        <squarespace:block-field id="footerBlock" class="footer-block" columns="12" label="Footer Content" />
+        <squarespace:block-field id="footerBlock" class="footer-block" label="Footer Content" />
       </div>
     </div>
   </div>
