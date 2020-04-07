@@ -4,8 +4,8 @@
       <div class="col-sm-3">
         <squarespace:block-field label="Social Media" id="social-media-links" />
         <ul>
-          <li><a href="http://www.ucedna.com/contact">Contact Us</a></li>
-          <li><a href="/newsletter">Newsletter</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+          <li><a href="https://caledna.substack.com">Newsletter</a></li>
           <li><a href="/terms">Terms of Use</a></li>
         </ul>
       </div>
