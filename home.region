@@ -82,7 +82,7 @@
           <div class="row">
             <div class="col-md-4 col-sm-6">
               <div class="panel panel-default">
-                <a href="http://www.ucedna.com/become-a-community-scientist/">
+                <a href="https://www.ucedna.com/become-a-community-scientist/">
                   <img src='/assets/images/home/register2.png' class='img-responsive'>
                   <div class="panel-body">
                     <h3>Volunteer as a community scientist.</h3>
@@ -93,7 +93,7 @@
 
             <div class="col-md-4 col-sm-6">
               <div class="panel panel-default">
-                <a href="http://www.ucedna.com/kit-training/">
+                <a href="https://www.ucedna.com/kit-training/">
                   <img src='/assets/images/home/collect_soil2.png' class='img-responsive'>
                   <div class="panel-body">
                     <h3>Get training for collecting soil samples.</h3>
@@ -115,7 +115,7 @@
 
             <div class="col-md-4 col-sm-6">
               <div class="panel panel-default">
-                <a href="http://www.ucedna.com/how-are-samples-analyzed/">
+                <a href="https://www.ucedna.com/how-are-samples-analyzed/">
                   <img src='/assets/images/home/analyze_sample2.png' class='img-responsive'>
                   <div class="panel-body">
                     <h3>Learn how our labs sequence and analyze eDNA.</h3>
