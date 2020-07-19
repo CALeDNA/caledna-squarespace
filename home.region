@@ -5,19 +5,7 @@
         <squarespace:navigation navigationId="pages" template="navigation" />
       {.end}
 
-      <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src='/assets/images/home-carousel/beach2.jpg'></div>
-          <div class="swiper-slide"><img src='/assets/images/home-carousel/forest2.jpg'></div>
-          <div class="swiper-slide"><img src='/assets/images/home-carousel/hill2.jpg'></div>
-          <div class="swiper-slide"><img src='/assets/images/home-carousel/shrub2.jpg'></div>
-        </div>
-
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-
-        <div class="swiper-pagination"></div>
-      </div>
+      <squarespace:block-field id="homeBanner" label="Home Banner" />
 
       <div class="hero-summary">
         <h1>CALeDNA</h1>
