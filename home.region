@@ -71,7 +71,10 @@
             <div class="col-md-4 col-sm-6">
               <div class="panel panel-default">
                 <a href="https://www.ucedna.com/become-a-community-scientist/">
-                  <img src='/assets/images/home/register2.png' class='img-responsive'>
+                  <img
+                    src="/assets/images/home/register.jpg"
+                    class="img-responsive"
+                  />
                   <div class="panel-body">
                     <h3>Volunteer as a community scientist.</h3>
                   </div>
@@ -81,21 +84,13 @@
 
             <div class="col-md-4 col-sm-6">
               <div class="panel panel-default">
-                <a href="https://www.ucedna.com/kit-training/">
-                  <img src='/assets/images/home/collect_soil2.png' class='img-responsive'>
-                  <div class="panel-body">
-                    <h3>Get training for collecting soil samples.</h3>
-                  </div>
-                </a>
-              </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6">
-              <div class="panel panel-default">
                 <a href="https://data.ucedna.com/events">
-                  <img src='/assets/images/home/attend_biobltiz2.png' class='img-responsive'>
+                  <img
+                    src="/assets/images/home/attend_biobltiz.jpg"
+                    class="img-responsive"
+                  />
                   <div class="panel-body">
-                    <h3>Attend bioblitzes to collect soil samples.</h3>
+                    <h3>Attend bioblitzes to collect eDNA samples.</h3>
                   </div>
                 </a>
               </div>
@@ -104,9 +99,12 @@
             <div class="col-md-4 col-sm-6">
               <div class="panel panel-default">
                 <a href="https://www.ucedna.com/how-are-samples-analyzed/">
-                  <img src='/assets/images/home/analyze_sample2.png' class='img-responsive'>
+                  <img
+                    src="/assets/images/home/analyze_sample.jpg"
+                    class="img-responsive"
+                  />
                   <div class="panel-body">
-                    <h3>Learn how our labs sequence and analyze eDNA.</h3>
+                    <h3>Learn how we sequence and analyze eDNA.</h3>
                   </div>
                 </a>
               </div>
@@ -115,9 +113,46 @@
             <div class="col-md-4 col-sm-6">
               <div class="panel panel-default">
                 <a href="https://data.ucedna.com/samples">
-                  <img src='/assets/images/home/explore_results2.png' class='img-responsive' />
+                  <img
+                    src="/assets/images/home/explore_data.jpg"
+                    class="img-responsive"
+                  />
                   <div class="panel-body">
-                    <h3>Explore the data we collect in the field and in our labs.</h3>
+                    <h3>
+                      Explore our field data and eDNA results.
+                    </h3>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <div class="panel panel-default">
+                <a href="https://data.ucedna.com/research_projects">
+                  <img
+                    src="/assets/images/home/research.jpg"
+                    class="img-responsive"
+                  />
+                  <div class="panel-body">
+                    <h3>
+                      Learn about our research projects.
+                    </h3>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <div class="panel panel-default">
+                <a href="https://www.ucedna.com/news/">
+                  <img
+                    src="/assets/images/home/news.jpg"
+                    class="img-responsive"
+                  />
+                  <div class="panel-body">
+                    <h3>
+                      Read the our latest news.
+                    </h3>
                   </div>
                 </a>
               </div>
