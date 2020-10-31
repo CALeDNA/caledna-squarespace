@@ -1,5 +1,9 @@
 # Squarespace templates for CALeDNA
 
+Reasons for using a custom template.
+- Install Bootstrap so the Squarespace pages looks like the Rails data portal.
+- Add a full width layout on the homepage.
+
 ## Getting started
 
 1. Install `squarespace server`.

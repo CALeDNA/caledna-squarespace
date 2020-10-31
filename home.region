@@ -8,25 +8,18 @@
       <squarespace:block-field id="homeBanner" label="Home Banner" />
 
       <div class="hero-summary">
-        <h1>CALeDNA</h1>
-        <h2>California Environmental DNA</h2>
-        <p>Together, we can help protect California's biodiversity.</p>
-        <div class="text-center">
-          <a href="https://data.ucedna.com/users/sign_up" class="btn btn-primary">Join Us</a>
-        </div>
+        <squarespace:block-field id="homeHeader" label="Home Header" />
       </div>
-
-
 
       <section class="intro">
         <div class="container">
           <div class="row">
             <div class="col-md-8">
-              <squarespace:block-field id="homeText1" label="Home 1" />
+              <squarespace:block-field id="homeText1" label="Text 1" />
             </div>
 
             <div class="col-md-4">
-              <img src='/assets/images/home/tidal_pool.jpg', class='img-responsive'>
+              <squarespace:block-field id="homeImage1" label="Image 1" />
             </div>
           </div>
         </div>
@@ -35,32 +28,15 @@
       <section class="open-data section-grey">
         <div class="container">
           <div class="row">
+
             <div class="col col-md-5">
-              <div class="site-stats">
-                <div class="stats-box">
-                  <img src='/assets/images/home/test_tube.png'>
-                  <span id="js-samples-count">-</span>
-                  Sites
-                </div>
-
-                <div class="stats-box">
-                  <img src='/assets/images/home/dna.png'>
-                  <span id="js-organisms-count">-</span>
-                  Organisms identified
-                </div>
-
-                <div class="stats-box">
-                  <img src='/assets/images/home/users.png'>
-                  <span id="js-users-count">-</span>
-                  Registered users
-                </div>
-              </div>
-
+              <squarespace:block-field id="siteStats" label="Site Stat" />
             </div>
 
             <div class="col col-md-7">
-              <squarespace:block-field id="homeText2" label="home2" />
+              <squarespace:block-field id="homeText2" label="Text 2" />
             </div>
+
           </div>
         </div>
       </section>
@@ -68,109 +44,47 @@
       <section class="activities">
         <div class="container">
           <div class="row">
-            <div class="col-md-4 col-sm-6">
-              <div class="panel panel-default">
-                <a href="https://www.ucedna.com/become-a-community-scientist/">
-                  <img
-                    src="/assets/images/home/register.jpg"
-                    class="img-responsive"
-                  />
-                  <div class="panel-body">
-                    <h3>Volunteer as a community scientist.</h3>
-                  </div>
-                </a>
-              </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6">
-              <div class="panel panel-default">
-                <a href="https://data.ucedna.com/events">
-                  <img
-                    src="/assets/images/home/attend_biobltiz.jpg"
-                    class="img-responsive"
-                  />
-                  <div class="panel-body">
-                    <h3>Attend bioblitzes to collect eDNA samples.</h3>
-                  </div>
-                </a>
-              </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6">
-              <div class="panel panel-default">
-                <a href="https://www.ucedna.com/how-are-samples-analyzed/">
-                  <img
-                    src="/assets/images/home/analyze_sample.jpg"
-                    class="img-responsive"
-                  />
-                  <div class="panel-body">
-                    <h3>Learn how we sequence and analyze eDNA.</h3>
-                  </div>
-                </a>
-              </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6">
-              <div class="panel panel-default">
-                <a href="https://data.ucedna.com/samples">
-                  <img
-                    src="/assets/images/home/explore_data.jpg"
-                    class="img-responsive"
-                  />
-                  <div class="panel-body">
-                    <h3>
-                      Explore our field data and eDNA results.
-                    </h3>
-                  </div>
-                </a>
-              </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6">
-              <div class="panel panel-default">
-                <a href="https://data.ucedna.com/research_projects">
-                  <img
-                    src="/assets/images/home/research.jpg"
-                    class="img-responsive"
-                  />
-                  <div class="panel-body">
-                    <h3>
-                      Learn about our research projects.
-                    </h3>
-                  </div>
-                </a>
-              </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6">
-              <div class="panel panel-default">
-                <a href="https://www.ucedna.com/news/">
-                  <img
-                    src="/assets/images/home/news.jpg"
-                    class="img-responsive"
-                  />
-                  <div class="panel-body">
-                    <h3>
-                      Read the our latest news.
-                    </h3>
-                  </div>
-                </a>
-              </div>
-            </div>
+            <squarespace:block-field id="site-pages" label="Site Pages" />
           </div>
         </div>
       </section>
 
       <section class="news section-grey">
         <div class="container">
-          <squarespace:block-field label="Updates" id="updates"/>
+          <squarespace:block-field id="updates" label="Updates" />
          </div>
       </section>
 
 
       <section class="cta">
         <div class="container">
-          <p>Help protect California's biodiversity.</p>
-          <a href="https://data.ucedna.com/users/sign_up" class="btn btn-primary">Join CALeDNA</a>
+          <squarespace:block-field id="join" label="Join" />
         </div>
       </section>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function(){
+          fetch('https://data.ucedna.com/api/v1/stats/home_page')
+          .then(response => response.json())
+          .then(data => {
+            const numberWithCommas = (x) => {
+              // https://stackoverflow.com/a/2901298
+              return x.toString().replace(/\B(?=(\d\d\d)+(?!\d))/g, ",");
+            };
+
+            const samplesEl = document.querySelector("#js-samples-count");
+            const organismsEl = document.querySelector("#js-organisms-count");
+            const usersEl = document.querySelector("#js-users-count");
+
+            if (samplesEl) {
+              samplesEl.textContent = numberWithCommas(data.samples_approved);
+            }
+            if (organismsEl) {
+              organismsEl.textContent = numberWithCommas(data.organisms);
+            }
+            if (usersEl) {
+              usersEl.textContent = numberWithCommas(data.users);
+            }
+          })
+        });
+      </script>
